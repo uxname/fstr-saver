@@ -1,9 +1,6 @@
-import { createRootRoute, Link, Outlet } from "@tanstack/react-router";
+import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
-
-import logo from "../../.github/logo.svg";
-
-import styles from "./__root.module.scss";
+import { SDKProvider } from "@tma.js/sdk-react";
 
 export const Route = createRootRoute({
   component: () => {
@@ -11,18 +8,10 @@ export const Route = createRootRoute({
 
     return (
       <>
-        <img src={logo} alt="logo" className={styles.logo} />
-        <div className={styles.header}>
-          <Link to="/" className="[&.active]:font-bold">
-            Home
-          </Link>{" "}
-          <Link to="/about" className="[&.active]:font-bold">
-            About
-          </Link>
-        </div>
-        <hr />
-        <Outlet />
-        {isDevelopment && <TanStackRouterDevtools />}
+        <SDKProvider acceptCustomStyles debug>
+          <Outlet />
+          {isDevelopment && <TanStackRouterDevtools />}
+        </SDKProvider>
       </>
     );
   },

@@ -1,0 +1,26 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f0f0f0;
+  font-family: Roboto, sans-serif;
+  font-size: 1rem;
+  color: #333;
+  text-align: center;
+
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+.date {
+  color: #ff2020;
+}
+
+.count {
+  color: #0070f3;
+  font-weight: bold;
+}
